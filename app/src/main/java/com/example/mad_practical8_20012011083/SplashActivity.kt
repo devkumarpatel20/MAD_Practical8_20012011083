@@ -8,7 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity(),Animation.AnimationListener {
     lateinit var guni_image : ImageView
     lateinit var logo_frambyframanimetion : AnimationDrawable
     lateinit var twinanimetion : Animation
@@ -33,11 +33,11 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    fun onAnimationStart(p0: Animation?) {
+    override fun onAnimationStart(p0: Animation?) {
 
     }
 
-    fun onAnimationEnd(p0: Animation?) {
+    override fun onAnimationEnd(p0: Animation?) {
         Intent(this,MainActivity::class.java).also {
             startActivity(it)
             overridePendingTransition(R.anim.scale_center_in,R.anim.scale_center_out)
@@ -45,11 +45,9 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    fun onAnimationRepeat(p0: Animation?) {
+    override fun onAnimationRepeat(p0: Animation?) {
 
     }
 }
 
-private fun Animation.setAnimationListener(splashActivity: SplashActivity) {
 
-}

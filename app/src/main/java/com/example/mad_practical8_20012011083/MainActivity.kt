@@ -7,7 +7,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),Animation.AnimationListener {
     lateinit var alarmimgs : ImageView
     lateinit var alarmimg_frameByFrameAnimation : AnimationDrawable
     lateinit var alarmimgAnimation : Animation
@@ -45,19 +45,17 @@ class MainActivity : AppCompatActivity() {
             heartimgs.startAnimation(heartAnimation)
         }
     }
-    fun onAnimationStart(p0: Animation?) {
+    override fun onAnimationStart(p0: Animation?) {
 
     }
 
-    fun onAnimationEnd(p0: Animation?) {
+    override fun onAnimationEnd(p0: Animation?) {
 
     }
 
-    fun onAnimationRepeat(p0: Animation?) {
+    override fun onAnimationRepeat(p0: Animation?) {
 
     }
 }
 
-private fun Animation.setAnimationListener(mainActivity: MainActivity) {
 
-}
